@@ -34,7 +34,7 @@ const orm = {
 		queryString += cols.toString();
 		queryString += `) `;
 		queryString += `VALUES (`;
-		queryString += printQuestionMarks(vals.length);
+		queryString += printQMarks(vals.length);
 		queryString += `) `;
 		console.log(queryString);
 
@@ -49,7 +49,7 @@ const orm = {
 		let queryString = `UPDATE ${table};`;
 
 		queryString += ` SET `;
-		queryString += objToSql(objColVals);
+		queryString += objectToSql(objColVals);
 		queryString += ` WHERE `;
 		queryString += condition;
 

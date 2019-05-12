@@ -1,19 +1,21 @@
-CREATE Database burgers_db;
+CREATE DATABASE
+IF NOT EXISTS burgers_db;
+USE burgers_db;
 
-Select burgers_db;
+-- If the table already exists, remove it before trying to create the table again
+DROP TABLE IF EXISTS burgers;
 
-CREATE TABLE `burgers`
+-- Create the burgers table
+CREATE TABLE burgers
 (
-  `id` int
-(11) NOT NULL AUTO_INCREMENT,
-  `burger_name` varchar
-(255) NOT NULL,
-  `devoured` tinyint
-(1) DEFAULT '0',
-  PRIMARY KEY
-(`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+  id int NOT NULL
+  AUTO_INCREMENT,
+    burger_name varchar
+  (255) NOT NULL,
+    devoured BOOL DEFAULT false,
+    PRIMARY KEY
+  (id)
+);
 
 
 
